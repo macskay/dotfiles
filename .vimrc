@@ -34,6 +34,7 @@ imap <leader>" ""<ESC>i
 imap <leader>( ()<ESC>i
 imap <leader>[ []<ESC>i
 imap <leader>{ <CR>{<CR>}<ESC>O
+imap <leader>c <ESC>:%d<CR><CR><LF>
 
 "Add auto-centering of lines
 nmap n nzz
