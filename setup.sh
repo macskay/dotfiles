@@ -34,3 +34,11 @@ echo "git submodule update"
 git submodule update
 echo "Alle PlugIns up-to-date"
 echo ".dotfiles erfolgreich importiert"
+echo "================================"
+echo ".fonts werden aktualisiert, um mit vim-airline zu funktionieren"
+echo "fc-cache -vf ~/.fonts/"
+fc-cache -vf ~/.fonts/
+echo ".fonts aktualisiert!"
+echo "====================="
+echo "| Setup erfolgreich |"
+echo "====================="
