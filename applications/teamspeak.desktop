@@ -1,0 +1,8 @@
+[Desktop Entry]
+Comment=
+Terminal=false
+Name=TeamSpeak 3
+Exec=ts3
+Type=Application
+Icon=/opt/ts3/ts3.png
+Categories=Network;
