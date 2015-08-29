@@ -1,7 +1,0 @@
-[Desktop Entry]
-Comment=Ubuntu Google Drive Client
-Terminal=false
-Name=overGrive
-Exec=python /opt/thefanclub/overgrive/overgrive
-Type=Application
-Icon=/opt/thefanclub/overgrive/overgrive.png

@@ -1,8 +1,0 @@
-[Desktop Entry]
-Comment=Google Drive
-Terminal=false
-Name=OverDrive
-Exec=python /opt/thefanclub/overgrive/overgrive
-Type=Application
-Icon=gnome-panel-launcher
-Hidden=true
