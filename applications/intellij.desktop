@@ -1,8 +1,0 @@
-[Desktop Entry]
-Comment=
-Terminal=false
-Name=IntelliJ
-Exec=intellij
-Type=Application
-Icon=/opt/intellij/bin/idea.png
-Categories=Development;
