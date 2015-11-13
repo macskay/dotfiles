@@ -1,5 +1,6 @@
 let mapleader=","
 execute pathogen#infect()
+
 "Add pathogen
 syntax on
 filetype plugin indent on
@@ -53,6 +54,10 @@ vmap <C-l> :tabnext<CR>
 vmap <C-t> :tabnew<CR>
 vmap <C-h> :tabprevious<CR>
 
+set tabstop=4
+set shiftwidth=4
+set expandtab
+
 "Add airline-configs
 set laststatus=2
 set t_Co=256
@@ -71,3 +76,7 @@ set ruler
 map <F10> :NERDTreeToggle<CR>
 map <F9> :NERDTreeFind<CR>
 
+"Add YCM-config
+let g:ycm_global_ycm_extra_conf = "~/.vim/conf/.ycm_extra_conf.py"
+let g:ycm_server_keep_logfiles = 1
+let g:ycm_server_log_level = 'debug'
