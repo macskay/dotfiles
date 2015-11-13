@@ -21,3 +21,7 @@
 [submodule "vterm"]
 	path=.vim/bundle/vterm
 	url=git://github.com/sollidsnake/vterm.git
+
+[submodule "syntastic"]
+	path=.vim/bundle/syntastic
+	url=https://github.com/scrooloose/syntastic.git
