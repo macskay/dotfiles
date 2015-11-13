@@ -80,3 +80,13 @@ map <F9> :NERDTreeFind<CR>
 let g:ycm_global_ycm_extra_conf = "~/.vim/conf/.ycm_extra_conf.py"
 let g:ycm_server_keep_logfiles = 1
 let g:ycm_server_log_level = 'debug'
+
+"Add syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list=1
+let g:syntastic_auto_loc_list=1
+let g:syntastic_check_on_open=1
+let g:syntastic_check_on_wq=0
