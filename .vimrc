@@ -97,3 +97,4 @@ command Ccpp w | !clear && g++ % -o %:r && ./%:r
 command Cc w | !clear && gcc % -o %:r && ./%:r
 command Cpy w | !clear && python %
 command Cpy3 w | !clear && python3 %
+command Csh w | !clear && chmod +x % && ./%
