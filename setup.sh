@@ -40,11 +40,6 @@ echo ".fonts werden aktualisiert, um mit vim-airline zu funktionieren"
 echo "fc-cache -vf ~/.fonts/"
 fc-cache -vf ~/.fonts/
 echo ".fonts aktualisiert!"
-echo "===================="
-echo "Mantis-Ticket Script hinzufügen"
-echo "sudo ln -s ./mantis /usr/local/bin"
-cd $setup_dir
-sudo ln -s $(pwd)/mantis /usr/local/bin
 echo "====================="
 echo "| Setup erfolgreich |"
 echo "====================="
