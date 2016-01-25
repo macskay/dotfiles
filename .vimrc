@@ -93,4 +93,7 @@ let g:syntastic_check_on_open=1
 let g:syntastic_check_on_wq=0
 
 "Add custom aliases
-command C w | !clear && g++ % && ./a.out
+command Ccpp w | !clear && g++ % -o %:r && ./%:r
+command Cc w | !clear && gcc % -o %:r && ./%:r
+command Cpy w | !clear && python %
+command Cpy3 w | !clear && python3 %
