@@ -34,6 +34,11 @@ git submodule init
 echo "git submodule update"
 git submodule update
 echo "Alle PlugIns up-to-date"
+echo "Install YouCompleteMe"
+cd ~/.vim/bundle/YouCompleteMe
+git submodule update --init --recursive
+sudo apt-get -y install cmake python-dev python3-dev
+./install.py --clang-completer
 echo ".dotfiles erfolgreich importiert"
 echo "================================"
 echo ".fonts werden aktualisiert, um mit vim-airline zu funktionieren"
