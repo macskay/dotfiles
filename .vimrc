@@ -4,7 +4,7 @@ execute pathogen#infect()
 "Add pathogen
 syntax on
 filetype plugin indent on
-color slate
+color desert 
 
 "Unmap arrow keys for normal mode"
 no <down> ddp
