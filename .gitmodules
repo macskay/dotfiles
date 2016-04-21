@@ -26,6 +26,14 @@
 	path=.vim/bundle/syntastic
 	url=https://github.com/scrooloose/syntastic.git
 
+[submodule "Tagbar"]
+    path=.vim/bundle/tagbar
+    url=https://github.com/majutsushi/tagbar.git
+
+[submodule "virtualenv"]
+    path=.vim/bundle/vim-virtualenv
+    url=https://github.com/jmcantrell/vim-virtualenv.git
+
 [submodule "YouCompleteMe"]
 	path=.vim/bundle/YouCompleteMe
 	url=https://github.com/Valloric/YouCompleteMe.git

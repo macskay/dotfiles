@@ -1,5 +1,5 @@
 let mapleader=","
-execute pathogen#infect()
+execute pathogen#infect()                      
 
 "Add pathogen
 syntax on
@@ -26,9 +26,19 @@ vno <up> <Nop>
 
 "Add line numbers"
 set nu
+set rnu
+
+"Add Ignoration of Case when searching"
+set ic
+
+"Add Title"
+set title
 
 "Add command field"
 set showcmd
+
+"Set default endofing to utf-8"
+set encoding=utf-8
 
 "Add Leader-Mappings"
 imap <leader>' ''<ESC>i
@@ -64,6 +74,7 @@ set laststatus=2
 set t_Co=256
 let g:airline_theme='wombat'
 let g:airline_powerline_fonts=1
+let g:airline#extensions#tabline#enabled=1
 
 "Add easy-motion"
 map / <Plug>(easymotion-sn)
@@ -77,10 +88,14 @@ set ruler
 map <F10> :NERDTreeToggle<CR>
 map <F9> :NERDTreeFind<CR>
 
+"Add Tagbar-mapping
+nmap <F8> :Tagbar-Toggle<CR>
+
 "Add YCM-config
 let g:ycm_global_ycm_extra_conf = "~/.vim/conf/.ycm_extra_conf.py"
 let g:ycm_server_keep_logfiles = 1
 let g:ycm_server_log_level = 'debug'
+let g:ycm_confirm_extra_conf = 0
 
 "Add syntastic
 set statusline+=%#warningmsg#
