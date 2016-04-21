@@ -25,6 +25,8 @@ echo "ln -s ~/Workspace/dotfiles/.vimrc ~/"
 ln -s $(pwd)/.bashrc ~/
 echo "ln -s ~/Workspace/dotfiles/.fonts ~/"
 ln -s $(pwd)/.ideavimrc ~/
+echo "Setting up NeoVim"
+ln -s $(pwd)/.vim ~/.config/nvim
 echo "Symbolische Links erfolgreich angelegt"
 echo "======================================"
 echo "Aktualisiere vim-plugins per git submodule"
@@ -37,7 +39,8 @@ echo "Alle PlugIns up-to-date"
 echo "Install YouCompleteMe"
 cd ~/.vim/bundle/YouCompleteMe
 git submodule update --init --recursive
-sudo apt-get -y install cmake python-dev python3-dev
+sudo apt-get -y install cmake python-dev python3-dev g++ build-essential neovim
+alias vim=nvim
 ./install.py --clang-completer
 echo ".dotfiles erfolgreich importiert"
 echo "================================"
