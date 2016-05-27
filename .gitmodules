@@ -14,26 +14,7 @@
 	path=.vim/bundle/vim-fugitive
 	url=git://github.com/tpope/vim-fugitive.git
 
-[submodule "screen"]
-	path=.vim/bundle/screen
-	url=git://github.com/ervandew/screen.git
-
-[submodule "vterm"]
-	path=.vim/bundle/vterm
-	url=git://github.com/sollidsnake/vterm.git
-
 [submodule "syntastic"]
 	path=.vim/bundle/syntastic
 	url=https://github.com/scrooloose/syntastic.git
 
-[submodule "Tagbar"]
-    path=.vim/bundle/tagbar
-    url=https://github.com/majutsushi/tagbar.git
-
-[submodule "virtualenv"]
-    path=.vim/bundle/vim-virtualenv
-    url=https://github.com/jmcantrell/vim-virtualenv.git
-
-[submodule "YouCompleteMe"]
-	path=.vim/bundle/YouCompleteMe
-	url=https://github.com/Valloric/YouCompleteMe.git
