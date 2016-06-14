@@ -119,3 +119,4 @@ fi
 # added by Anaconda3 2.3.0 installer
 export PATH="/opt/anaconda/bin:$PATH"
 export ANDROID_HOME="/opt/android-sdk"
+export $(dbus-launch)
