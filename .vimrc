@@ -41,10 +41,10 @@ set showcmd
 set encoding=utf-8
 
 "Add Leader-Mappings"
+imap <leader>[ []<ESC>i
 imap <leader>' ''<ESC>i
 imap <leader>" ""<ESC>i
 imap <leader>( ()<ESC>i
-imap <leader>[ []<ESC>i
 imap <leader>{ <CR>{<CR>}<ESC>O
 imap <leader>c <ESC>:%d<CR><CR><LF>
 
@@ -76,10 +76,6 @@ let g:airline_theme='wombat'
 let g:airline_powerline_fonts=1
 let g:airline#extensions#tabline#enabled=1
 
-"Add easy-motion"
-map / <Plug>(easymotion-sn)
-omap / <Plug>(easymotion-tn)
-
 "Add visuals
 set cursorline
 set ruler
@@ -87,25 +83,6 @@ set ruler
 "Add NERDTree-mappings
 map <F10> :NERDTreeToggle<CR>
 map <F9> :NERDTreeFind<CR>
-
-"Add Tagbar-mapping
-nmap <F8> :Tagbar-Toggle<CR>
-
-"Add YCM-config
-let g:ycm_global_ycm_extra_conf = "~/.vim/conf/.ycm_extra_conf.py"
-let g:ycm_server_keep_logfiles = 1
-let g:ycm_server_log_level = 'debug'
-let g:ycm_confirm_extra_conf = 0
-
-"Add syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list=1
-let g:syntastic_auto_loc_list=1
-let g:syntastic_check_on_open=1
-let g:syntastic_check_on_wq=0
 
 "Add custom aliases
 command Ccpp w | !clear && g++ % -o %:r && ./%:r
