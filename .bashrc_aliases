@@ -1,0 +1,27 @@
+###
+# Directory Listings
+###
+
+alias ls='ls --color=auto'
+alias ll='ls -l --color=auto'
+alias la='ls -al --color=auto'
+alias lt='ls -alt --color=auto'
+alias lg='ls -al | grep'
+
+###
+# Processes
+###
+
+alias pg='ps aux | grep'
+
+###
+# Git
+###
+
+alias gs='git status'
+alias ga='git add'
+alias gpl='git pull'
+alias gch='git checkout'
+alias gcl='git clone'
+alias gps='git push'
+alias gc='git commit'
