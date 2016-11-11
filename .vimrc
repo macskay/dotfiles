@@ -51,18 +51,18 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 
-"Add airline-configs
+"Add airline- and NERDTree-configs
 set laststatus=2
 set t_Co=256
 let g:airline_theme='wombat'
 let g:airline_powerline_fonts=1
 let g:airline#extensions#tabline#enabled=1
+let NERDTreeShowHidden=1
 
 "Add visuals
 set cursorline
 set ruler
 
-"Add NERDTree-mappings
 no <down> ddp
 no <up> ddkP
 map <C-l> :tabnext<CR>
