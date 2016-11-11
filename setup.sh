@@ -3,28 +3,30 @@
 setup_dir=$(pwd)
 echo "Lösche alte Verzeichnisse"
 echo "sudo rm -r ~/.vim"
-sudo rm -r ~/.vim
+rm -r ~/.vim
 echo "sudo rm ~/.vimrc"
-sudo rm ~/.vimrc
+rm ~/.vimrc
 echo "sudo rm ~/.bashrc"
-sudo rm ~/.bashrc
+rm ~/.bashrc
 echo "sudo rm -r ~/.fonts"
-sudo rm -r ~/.fonts
+rm -r ~/.fonts
 echo "sudo rm ~/.ideavimrc"
-sudo rm ~/.ideavimrc
+rm ~/.ideavimrc
 echo "Alte Verzeichnisse gelöscht"
 echo "==========================="
 echo "Lege symbolische Links an"
-echo "ln -s ~/Workspace/dotfiles/.vim ~/"
-ln -s $(pwd)/.vimrc ~/
-echo "ln -s ~/Workspace/dotfiles/.bashrc ~/"
-ln -s $(pwd)/.fonts ~/
-echo "ln -s ~/Workspace/dotfiles/.ideavimrc ~/"
-ln -s $(pwd)/.vim ~/
 echo "ln -s ~/Workspace/dotfiles/.vimrc ~/"
-ln -s $(pwd)/.bashrc ~/
+ln -s $(pwd)/.vimrc ~/
 echo "ln -s ~/Workspace/dotfiles/.fonts ~/"
-ln -s $(pwd)/.ideavimrc ~/
+ln -s $(pwd)/.fonts ~/
+echo "ln -s ~/Workspace/dotfiles/.vim ~/"
+ln -s $(pwd)/.vim ~/
+echo "ln -s ~/Workspace/dotfiles/.bashrc ~/"
+ln -s $(pwd)/.bashrc ~/
+echo "ln -s ~/Workspace/dotfiles/.bashrc_aliases ~/"
+ln -s $(pwd)/.bashrc_aliases ~/
+echo "ln -s ~/Workspace/dotfiles/.fonts ~/"
+ln -s $(pwd)/.fonts ~/
 echo "Setting up NeoVim"
 ln -s $(pwd)/.vim ~/.config/nvim
 echo "Symbolische Links erfolgreich angelegt"
