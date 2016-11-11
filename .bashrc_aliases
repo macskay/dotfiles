@@ -1,5 +1,21 @@
 ###
-# Directory Listings
+# Misc
+###
+
+alias c='clear'
+alias tr='sudo ./tomcat restart'
+alias svim='sudo vim'
+alias fhere='find . -name'
+alias mkdir='mkdir -pv'
+
+###
+# Grep
+###
+
+alias grep='grep --color=auto'
+
+###
+# Listings
 ###
 
 alias ls='ls --color=auto'
@@ -25,3 +41,10 @@ alias gch='git checkout'
 alias gcl='git clone'
 alias gps='git push'
 alias gc='git commit'
+
+###
+# Directory
+###
+
+alias cd..='cd ..'
+alias .2='cd ..'

@@ -78,3 +78,7 @@ export PROMPT_COMMAND=_prompt_command
 if [ -f ~/.bashrc_aliases ]; then
     . ~/.bashrc_aliases
 fi
+
+if [ -f ~/.bashrc_aliases_functions ]; then
+    . ~/.bashrc_aliases_functions
+fi

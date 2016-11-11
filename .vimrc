@@ -21,7 +21,7 @@ set ruler
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatslineFlag()}
 set statusline+=%*
-
+"
 "Add Leader-Mappings"
 imap <leader>[ []<ESC>i
 imap <leader>' ''<ESC>i
@@ -68,9 +68,11 @@ no <up> ddkP
 map <C-l> :tabnext<CR>
 map <C-t> :tabnew<CR>
 map <C-h> :tabprevious<CR>
-map! <C-l> <ESC>:tabnext<CR>
-map! <C-t> <ESC>:tabnew<CR>
-map! <C-h> <ESC>:tabprevious<CR>
+map <C-l> <ESC>:tabnext<CR>
+map <C-t> <ESC>:tabnew<CR>
+map <C-h> <ESC>:tabprevious<CR>
+map <F9> <ESC>:Tlist<CR>
+map <F10> <ESC>:NERDTreeToggle<CR>
 
 " Compiler-Mappings
 command Ccpp w | !clear && g++ % -o %:r && ./%:r
