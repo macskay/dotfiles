@@ -4,7 +4,7 @@ execute pathogen#infect()
 "Add pathogen
 syntax on
 filetype plugin indent on
-color desert 
+colorscheme monokai
 
 set encoding=utf-8
 set nu
@@ -21,7 +21,7 @@ set ruler
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatslineFlag()}
 set statusline+=%*
-
+"
 "Add Leader-Mappings"
 imap <leader>[ []<ESC>i
 imap <leader>' ''<ESC>i
@@ -51,26 +51,28 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 
-"Add airline-configs
+"Add airline- and NERDTree-configs
 set laststatus=2
 set t_Co=256
 let g:airline_theme='wombat'
 let g:airline_powerline_fonts=1
 let g:airline#extensions#tabline#enabled=1
+let NERDTreeShowHidden=1
 
 "Add visuals
 set cursorline
 set ruler
 
-"Add NERDTree-mappings
 no <down> ddp
 no <up> ddkP
 map <C-l> :tabnext<CR>
 map <C-t> :tabnew<CR>
 map <C-h> :tabprevious<CR>
-map! <C-l> <ESC>:tabnext<CR>
-map! <C-t> <ESC>:tabnew<CR>
-map! <C-h> <ESC>:tabprevious<CR>
+map <C-l> <ESC>:tabnext<CR>
+map <C-t> <ESC>:tabnew<CR>
+map <C-h> <ESC>:tabprevious<CR>
+map <F9> <ESC>:Tlist<CR>
+map <F10> <ESC>:NERDTreeToggle<CR>
 
 " Compiler-Mappings
 command Ccpp w | !clear && g++ % -o %:r && ./%:r
