@@ -120,3 +120,4 @@ fi
 export PATH="/opt/anaconda/bin:$PATH"
 export ANDROID_HOME="/opt/android-sdk"
 export $(dbus-launch)
+export VISUAL="vim"
