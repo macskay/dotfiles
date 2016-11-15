@@ -90,6 +90,10 @@ fi
 if [ -f ~/.bashrc_aliases_functions ]; then
     . ~/.bashrc_aliases_functions
 fi
+if [ -z "$SSH_AUTH_SOCK" ]; then
+    eval $(ssh-agent -s)
+    ssh-add ~/.ssh/id_git
+fi
 
 export $(dbus-launch)
 export VISUAL="vim"
