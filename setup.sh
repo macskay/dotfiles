@@ -52,6 +52,7 @@ fc-cache -vf ~/.fonts/
 echo ".fonts aktualisiert!"
 echo "Eigene Skripte verlinken"
 echo "========================"
+echo "Virtual-Env Skript:"
 sudo ln -s $(pwd)/workon.sh /usr/bin/workon
 echo "ln -s $(pwd)/workon.sh /usr/bin/workon"
 echo "====================="
