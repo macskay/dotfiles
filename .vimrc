@@ -4,7 +4,7 @@ execute pathogen#infect()
 "Add pathogen
 syntax on
 filetype plugin indent on
-colorscheme monokai
+color koehler
 
 set encoding=utf-8
 set nu
@@ -86,8 +86,9 @@ autocmd FileType c map <F3> :Cc<CR>
 autocmd FileType python map <F3> :Cpy<CR>
 autocmd FileType sh map <F3> :Csh<CR>
 autocmd FileType java map <F3> :Cjava<CR>
-"
 " Latex-Mappings
+let g:tex_flavor="latex"
+
 autocmd FileType tex imap <leader>it \begin{itemize}<CR>\item <CR>\end{itemize}<ESC>k$i<SPACE>
 autocmd FileType tex imap <leader>en \begin{enumerate}<CR>\item <CR>\end{enumerate}<ESC>k$i<SPACE>
 autocmd FileType tex imap <leader>sf \begin{subfigure}[b]{0.25\textwidth}<CR>\caption{~}<CR>\label{fig:}<CR>\end{subfigure}<ESC>kkO
@@ -103,3 +104,16 @@ autocmd FileType tex imap <leader>if \If{condition}<CR>\EndIf<ESC>O<TAB>
 autocmd FileType tex imap <leader>var \State<CR><ESC>k$a<SPACE>
 autocmd FileType tex imap <leader>wh \While{condition}<CR>\EndWhile<ESC>O<TAB>
 autocmd FileType tex imap <leader>for \For{condition}<CR>\EndFor<ESC>O<TAB>
+
+"python mapping
+
+autocmd FileType python imap <leader>cl class A:<CR>def __init__(self):<CR>pass<CR><ESC>
+autocmd FileType python imap <leader>cfu def clsfunc(self):<CR>pass<CR><ESC>
+autocmd FileType python imap <leader>fu def func():<CR>pass<CR><ESC>
+autocmd FileType python imap <leader>ma def main():<CR>print("Hello, World!")<CR><CR><ESC><<Iif __name__ == "__main__":<CR>main()<CR><ESC>
+autocmd FileType python imap <leader>1pv print("{}".format(x))<ESC>hci(
+autocmd FileType python imap <leader>2pv print("{},{}".format(x))<ESC>hci(
+autocmd FileType python imap <leader>3pv print("{},{},{}".format(x))<ESC>hci(
+
+"sh mapping
+autocmd FileType sh imap <leader>u if [ $USER != "" ]; then<CR>This script must be run as: user<CR>Script started as: $USER<CR>exit 1<CR>fi<CR><ESC>

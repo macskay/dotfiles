@@ -47,7 +47,7 @@ function _git_prompt() {
         fi
         if [[ "$git_status" =~ On\ branch\ ([^[:space:]]+) ]]; then
             branch=${BASH_REMATCH[1]}
-            test "$branch" != master || branch=' '
+            # test "$branch" != master || branch=' '
         else
             # Detached HEAD.  (branch=HEAD is a faster alternative.)
             branch="(`git describe --all --contains --abbrev=4 HEAD 2> /dev/null ||
@@ -57,10 +57,18 @@ function _git_prompt() {
     fi
 }
 
+function _venv_prompt() {
+    if [[ $VIRTUAL_ENV != "" ]]; then
+        echo "("${VIRTUAL_ENV##*/}") "
+    else
+        echo ""
+    fi
+}
+
 # Colour your prompt
 
 function _prompt_command() {
-    PS1='\n\n\[$PINK\]\u@\h \[$LBLUE\]on \[$PURPLE\]\d \[$LBLUE\]at \[$ORANGE\]\@\[$LBLUE\]in \[$GREEN\]\w \[$ORANGE\]`_git_prompt` \n\[$GREEN\]>> \[$YELLOW\]'
+    PS1='\n\n\[$PINK\]\u@\h \[$ORANGE\]`_venv_prompt`\[$LBLUE\]on \[$PURPLE\]\d \[$LBLUE\]at \[$ORANGE\]\@\[$LBLUE\]in \[$GREEN\]\w \[$ORANGE\]`_git_prompt` \n\[$GREEN\]>> \[$YELLOW\]'
 }
 
 export PROMPT_COMMAND=_prompt_command

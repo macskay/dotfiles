@@ -50,6 +50,10 @@ echo ".fonts werden aktualisiert, um mit vim-airline zu funktionieren"
 echo "fc-cache -vf ~/.fonts/"
 fc-cache -vf ~/.fonts/
 echo ".fonts aktualisiert!"
+echo "Eigene Skripte verlinken"
+echo "========================"
+sudo ln -s $(pwd)/workon.sh /usr/bin/workon
+echo "ln -s $(pwd)/workon.sh /usr/bin/workon"
 echo "====================="
 echo "| Setup erfolgreich |"
 echo "====================="

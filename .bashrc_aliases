@@ -34,6 +34,7 @@ alias pg='ps aux | grep'
 # Git
 ###
 
+alias git='LANG=en_US git'
 alias gs='git status'
 alias ga='git add'
 alias gpl='git pull'
@@ -41,6 +42,7 @@ alias gch='git checkout'
 alias gcl='git clone'
 alias gps='git push'
 alias gc='git commit'
+
 
 ###
 # Directory
