@@ -7,6 +7,18 @@ alias tr='sudo ./tomcat restart'
 alias svim='sudo vim'
 alias fhere='find . -name'
 alias mkdir='mkdir -pv'
+alias muttspam='sudo mutt -f /home/spam/Maildir'
+alias cd..='cd ..'
+
+###
+# Logging
+###
+
+alias lsys='sudo less /var/log/syslog'
+alias tfsys='sudo tail -f /var/log/syslog'
+alias tfmail='sudo tail -f /var/log/mail.log'
+alias lmail='sudo less /var/log/mail.log'
+alias tf='sudo tail -f'
 
 ###
 # Grep
@@ -43,10 +55,3 @@ alias gcl='git clone'
 alias gps='git push'
 alias gc='git commit'
 
-
-###
-# Directory
-###
-
-alias cd..='cd ..'
-alias .2='cd ..'

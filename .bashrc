@@ -1,5 +1,3 @@
-# WEDISAGREE terminal prompt. By Clem.
-
 # Change the 16 colours of your default terminal palette to the following Monokai-inspired colours. Do this in your terminal's profile preferences.
 
 # 1st 8 colours: #1D1F21, #F92672, #A6E22E, #FD971F, #1E90FF, #9458FF, #66D9EF, #EDD400
@@ -20,8 +18,7 @@ LBLUE=$'\e[36;40m'
 PURPLE=$'\e[35;40m'
 GREEN=$'\e[32;40m'
 ORANGE=$'\e[33;40m'
-YELLOW=$'\e[37;40m'
-PINK=$'\e[31;40m'
+YELLOW=$'\e[37;40m' PINK=$'\e[31;40m'
 
 # This bit enables different colours for your command and output but for it to work you must add yourself to the tty group.
 # To do so, enter the following command in your terminal: sudo gpasswd --add <username> tty
@@ -68,7 +65,7 @@ function _venv_prompt() {
 # Colour your prompt
 
 function _prompt_command() {
-    PS1='\n\n\[$PINK\]\u@\h \[$ORANGE\]`_venv_prompt`\[$LBLUE\]on \[$PURPLE\]\d \[$LBLUE\]at \[$ORANGE\]\@\[$LBLUE\]in \[$GREEN\]\w \[$ORANGE\]`_git_prompt` \n\[$GREEN\]>> \[$YELLOW\]'
+    PS1='\[$PINK\]\u@\H \[$ORANGE\]`_venv_prompt`\[$LBLUE\]# \[$PURPLE\]\D{%d.%m.%y} \[$LBLUE\]# \[$ORANGE\]\A \[$LBLUE\]in \[$GREEN\]\w \[$ORANGE\]`_git_prompt`:\[$GREEN\] \[$YELLOW\]'
 }
 
 export PROMPT_COMMAND=_prompt_command
@@ -90,11 +87,7 @@ fi
 if [ -f ~/.bashrc_aliases_functions ]; then
     . ~/.bashrc_aliases_functions
 fi
-if [ -z "$SSH_AUTH_SOCK" ]; then
-    eval $(ssh-agent -s)
-    ssh-add ~/.ssh/id_git
-fi
 
 export $(dbus-launch)
 export VISUAL="vim"
-
+export EDITOR="vim"

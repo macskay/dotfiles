@@ -116,4 +116,4 @@ autocmd FileType python imap <leader>2pv print("{},{}".format(x))<ESC>hci(
 autocmd FileType python imap <leader>3pv print("{},{},{}".format(x))<ESC>hci(
 
 "sh mapping
-autocmd FileType sh imap <leader>u if [ $USER != "" ]; then<CR>This script must be run as: user<CR>Script started as: $USER<CR>exit 1<CR>fi<CR><ESC>
+autocmd FileType sh imap <leader>u if [ $USER != "" ]; then<CR>echo "This script must be run as: user"<CR>echo "Script started as: $USER"<CR>exit 1<CR>fi<CR><ESC>
