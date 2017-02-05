@@ -29,6 +29,8 @@ echo "ln -s ~/Workspace/dotfiles/.bashrc_alias_functions ~/"
 ln -s $(pwd)/.bashrc_alias_functions ~/
 echo "ln -s ~/Workspace/dotfiles/.fonts ~/"
 ln -s $(pwd)/.fonts ~/
+echo "ln -s ~/Workspace/dotfiles/.dircolors ~/"
+ln -s $(pwd)/.dircolors ~/
 # echo "Setting up NeoVim"
 # ln -s $(pwd)/.vim ~/.config/nvim
 echo "Symbolische Links erfolgreich angelegt"

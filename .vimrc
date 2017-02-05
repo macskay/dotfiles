@@ -4,8 +4,9 @@ execute pathogen#infect()
 "Add pathogen
 syntax on
 filetype plugin indent on
-color koehler
+color desert
 
+set term=screen-256color
 set encoding=utf-8
 set nu
 set rnu

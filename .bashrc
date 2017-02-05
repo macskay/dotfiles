@@ -18,7 +18,10 @@ LBLUE=$'\e[36;40m'
 PURPLE=$'\e[35;40m'
 GREEN=$'\e[32;40m'
 ORANGE=$'\e[33;40m'
-YELLOW=$'\e[37;40m' PINK=$'\e[31;40m'
+YELLOW=$'\e[37;40m' 
+PINK=$'\e[31m'
+LIGHTGREEN=$'\e[01;32m'
+DIR_COLOR=$'\e[38;5;25m'
 
 # This bit enables different colours for your command and output but for it to work you must add yourself to the tty group.
 # To do so, enter the following command in your terminal: sudo gpasswd --add <username> tty
@@ -30,42 +33,10 @@ debug()
 }
 trap debug DEBUG
 
-# This bit changes the prompt when you're in a Git repo.
-
-function _git_prompt() {
-    local git_status="`git status -unormal 2>&1`"
-    if ! [[ "$git_status" =~ Not\ a\ git\ repo ]]; then
-        if [[ "$git_status" =~ nothing\ to\ commit ]]; then
-            local gitcolour="nothing to commit:$YELLOW"
-        elif [[ "$git_status" =~ nothing\ added\ to\ commit\ but\ untracked\ files\ present ]]; then
-            local gitcolour="untracked:$PINK"
-        else
-            local gitcolour="branch:$LBLUE"
-        fi
-        if [[ "$git_status" =~ On\ branch\ ([^[:space:]]+) ]]; then
-            branch=${BASH_REMATCH[1]}
-            # test "$branch" != master || branch=' '
-        else
-            # Detached HEAD.  (branch=HEAD is a faster alternative.)
-            branch="(`git describe --all --contains --abbrev=4 HEAD 2> /dev/null ||
-                echo HEAD`)"
-        fi
-        echo -n "$gitcolour $branch"
-    fi
-}
-
-function _venv_prompt() {
-    if [[ $VIRTUAL_ENV != "" ]]; then
-        echo "("${VIRTUAL_ENV##*/}") "
-    else
-        echo ""
-    fi
-}
-
 # Colour your prompt
 
 function _prompt_command() {
-    PS1='\[$PINK\]\u@\H \[$ORANGE\]`_venv_prompt`\[$LBLUE\]# \[$PURPLE\]\D{%d.%m.%y} \[$LBLUE\]# \[$ORANGE\]\A \[$LBLUE\]in \[$GREEN\]\w \[$ORANGE\]`_git_prompt`:\[$GREEN\] \[$YELLOW\]'
+    PS1='\[$LIGHTGREEN\]\u@\H\[\e[0m\]:\[$DIR_COLOR\]\w\[\e[0m\]$ '
 }
 
 export PROMPT_COMMAND=_prompt_command
@@ -91,3 +62,7 @@ fi
 export $(dbus-launch)
 export VISUAL="vim"
 export EDITOR="vim"
+
+umask 022 
+
+eval "$(dircolors -b ~/.dircolors)"
