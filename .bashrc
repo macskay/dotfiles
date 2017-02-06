@@ -66,3 +66,4 @@ export EDITOR="vim"
 umask 022 
 
 eval "$(dircolors -b ~/.dircolors)"
+eval "$(ssh-agent -s)"

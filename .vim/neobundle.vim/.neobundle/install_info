@@ -1,0 +1,2 @@
+3.0
+{'InstantRst': {'checked_time': 1485413070, 'installed_uri': 'https://github.com/Rykka/InstantRst.git', 'installed_path': '/home/mak/.vim/neobundle.vim/InstantRst', 'revisions': {'1452511125': '96f37682deadd093953a1d424000434461042756'}, 'updated_time': '1452511125'}, 'neobundle.vim': {'checked_time': 1485412963, 'installed_uri': 'https://github.com/Shougo/neobundle.vim.git', 'installed_path': '/home/mak/.vim/neobundle.vim/neobundle.vim', 'revisions': {'1476488244': '88951d60547595606ea0ca8f28f643d2506f2714'}, 'updated_time': '1476488244'}}
