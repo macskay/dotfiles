@@ -6,6 +6,6 @@
 	path=.vim/bundle/vim-airline
 	url=git://github.com/bling/vim-airline.git
 
-[submodule "virtualenv"]
-    path=.vim/bundle/vim-virtualenv
-    url=https://github.com/jmcantrell/vim-virtualenv.git
+[submodule "YouCompleteMe"]
+	path=.vim/bundle/YouCompleteMe
+	url=git://github.com/Valloric/YouCompleteMe.git
