@@ -1,1 +1,1 @@
-/home/mak/Code/dotfiles/.vimrc
+/home/mak/Workspace/dotfiles/.vimrc

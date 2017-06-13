@@ -4,12 +4,10 @@ execute pathogen#infect()
 "Add pathogen
 syntax on
 filetype plugin indent on
-color desert
 
-set term=screen-256color
+" set term=screen-256color
 set encoding=utf-8
 set nu
-set rnu
 set ic
 set title
 set showcmd
@@ -18,11 +16,12 @@ set shiftwidth=4
 set expandtab
 set laststatus=2
 set t_Co=256
-set ruler
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatslineFlag()}
-set statusline+=%*
-"
+set tabstop=4
+set shiftwidth=4
+set expandtab
+
+color monokai
+
 "Add Leader-Mappings"
 imap <leader>[ []<ESC>i
 imap <leader>' ''<ESC>i
@@ -30,6 +29,15 @@ imap <leader>" ""<ESC>i
 imap <leader>( ()<ESC>i
 imap <leader>{ <CR>{<CR>}<ESC>O
 imap <leader>c <ESC>:%d<CR><CR><LF>
+map <leader>vv <ESC>:vnew<CR>
+map <leader>hh <ESC>:new<CR>
+map <leader>ss <ESC>ysiw
+map <leader>tt <ESC>:Tab /
+
+no <down> ddp
+no <up> ddkP
+map <F9> <ESC>:Tlist<CR>
+map <F10> <ESC>:NERDTreeToggle<CR>
 
 "Add auto-centering of lines
 nmap n nzz
@@ -48,45 +56,29 @@ vmap <C-l> :tabnext<CR>
 vmap <C-t> :tabnew<CR>
 vmap <C-h> :tabprevious<CR>
 
-set tabstop=4
-set shiftwidth=4
-set expandtab
 
 "Add airline- and NERDTree-configs
 set laststatus=2
 set t_Co=256
-let g:airline_theme='wombat'
-let g:airline_powerline_fonts=1
-let g:airline#extensions#tabline#enabled=1
-let NERDTreeShowHidden=1
-
-"Add visuals
-set cursorline
-set ruler
-
-no <down> ddp
-no <up> ddkP
-map <C-l> :tabnext<CR>
-map <C-t> :tabnew<CR>
-map <C-h> :tabprevious<CR>
-map <C-l> <ESC>:tabnext<CR>
-map <C-t> <ESC>:tabnew<CR>
-map <C-h> <ESC>:tabprevious<CR>
-map <F9> <ESC>:Tlist<CR>
-map <F10> <ESC>:NERDTreeToggle<CR>
+let g:airline_theme = 'wombat'
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+let NERDTreeShowHidden = 1
 
 " Compiler-Mappings
+autocmd FileType cpp map <F3> :Ccpp<CR>
+autocmd FileType c map <F3> :Cc<CR>
+autocmd FileType python map <F3> :Cpy<CR>
+autocmd FileType sh map <F3> :Csh<CR>
+autocmd FileType java map <F3> :Cjava<CR>
+
 command Ccpp w | !clear && g++ % -o %:r && ./%:r
 command Cc w | !clear && gcc % -o %:r && ./%:r
 command Cpy w | !clear && python %
 command Csh w | !clear && chmod +x % && ./%
 command Cjava w | !clear && javac % && java %:r
 
-autocmd FileType cpp map <F3> :Ccpp<CR>
-autocmd FileType c map <F3> :Cc<CR>
-autocmd FileType python map <F3> :Cpy<CR>
-autocmd FileType sh map <F3> :Csh<CR>
-autocmd FileType java map <F3> :Cjava<CR>
+"
 " Latex-Mappings
 let g:tex_flavor="latex"
 
@@ -118,3 +110,4 @@ autocmd FileType python imap <leader>3pv print("{},{},{}".format(x))<ESC>hci(
 
 "sh mapping
 autocmd FileType sh imap <leader>u if [ $USER != "" ]; then<CR>echo "This script must be run as: user"<CR>echo "Script started as: $USER"<CR>exit 1<CR>fi<CR><ESC>
+
