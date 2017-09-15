@@ -39,9 +39,8 @@ export EDITOR="vim"
 eval "$(dircolors -b ~/.dircolors)"
 eval "$(ssh-agent -s)">/dev/null
 
-xinput --set-prop "Razer Razer DeathAdder" "libinput Accel Profile Enabled" 0, 1
-xinput --set-prop "Razer Razer DeathAdder" "libinput Accel Speed" -0.8
-
 . /usr/bin/virtualenvwrapper.sh
  
 xset b off
+
+export TMPDIR=$HOME/.tmp
