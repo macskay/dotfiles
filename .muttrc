@@ -1,0 +1,27 @@
+# Folder hooks
+folder-hook 'account.com.gmail' 'source ~/.mutt/account.com.gmail'
+folder-hook 'twt-dh.de.mail' 'source ~/.mutt/twt-dh.de.mail'
+
+# Default account
+source ~/.mutt/twt-dh.de.mail         
+
+# Macros for switching accounts
+macro index <f2> '<sync-mailbox><enter-command>source ~/.mutt/twt-dh.de.mail<enter><change-folder>!<enter>'
+macro index <f3> '<sync-mailbox><enter-command>source ~/.mutt/account.com.gmail<enter><change-folder>!<enter>'
+
+# Fetch mail shortcut
+bind index G imap-fetch-mail
+
+auto_view text/html
+
+source ~/Workspace/mutt-colors-solarized/mutt-colors-solarized-light-256.muttrc
+
+bind index,pager B sidebar-toggle-visible
+
+mailboxes =INBOX
+set imap_check_subscribed
+
+set sidebar_visible=yes
+set sidebar_sort_method=alpha
+
+
