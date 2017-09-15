@@ -44,3 +44,4 @@ eval "$(ssh-agent -s)">/dev/null
 xset b off
 
 export TMPDIR=$HOME/.tmp
+export TERM=xterm-256color

@@ -18,11 +18,11 @@
     path=.vim/bundle/vim-surround
     url=git://github.com/tpope/vim-surround.git
 
-[submodole "taglist.vim"]
-    path=.vim/bundle/taglist
+[submodule "taglist"]
+    path=.vim/bundle/taglist.vim
     url=git://github.com/vim-scripts/taglist.vim.git
 
 [submodule "tabular"]
-    path=.vim/bundle/taglist
+    path=.vim/bundle/tabular
     url=git://github.com/godlygeek/tabular.git
 
