@@ -6,6 +6,7 @@ syntax on
 filetype plugin indent on
 
 " set term=screen-256color
+set completeopt-=preview
 set encoding=utf-8
 set nu
 set ic
@@ -71,11 +72,13 @@ autocmd FileType c map <F3> :Cc<CR>
 autocmd FileType python map <F3> :Cpy<CR>
 autocmd FileType sh map <F3> :Csh<CR>
 autocmd FileType java map <F3> :Cjava<CR>
+autocmd FileType javascript map <F3> :Cjs<CR>
 
 command Ccpp w | !clear && g++ % -o %:r && ./%:r
 command Cc w | !clear && gcc % -o %:r && ./%:r
 command Cpy w | !clear && python %
 command Csh w | !clear && chmod +x % && ./%
+command Cjs w | !clear && node %
 command Cjava w | !clear && javac % && java %:r
 
 "
