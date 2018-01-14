@@ -20,7 +20,6 @@ set t_Co=256
 set tabstop=4
 set shiftwidth=4
 set expandtab
-
 color monokai
 
 "Add Leader-Mappings"
@@ -65,6 +64,16 @@ let g:airline_theme = 'wombat'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let NERDTreeShowHidden = 1
+
+"Add syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 " Compiler-Mappings
 autocmd FileType cpp map <F3> :Ccpp<CR>

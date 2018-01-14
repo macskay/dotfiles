@@ -11,6 +11,8 @@ rm -r ~/.fonts
 rm -r ~/.dircolors
 rm -r ~/.tmux.conf
 rm -r ~/.mutt*
+rm -r ~/.i3
+
 
 ln -s $(pwd)/.vimrc ~/
 ln -s $(pwd)/.fonts ~/
@@ -23,6 +25,7 @@ ln -s $(pwd)/.dircolors ~/
 ln -s $(pwd)/.tmux.conf ~/
 ln -s $(pwd)/.muttrc ~/
 ln -s $(pwd)/.mutt ~/
+ln -s $(pwd)/.i3 ~/
 
 ln -s $(pwd)/tmux-default.sh /usr/bin/tmux-def
 
