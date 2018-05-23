@@ -20,7 +20,11 @@ set t_Co=256
 set tabstop=4
 set shiftwidth=4
 set expandtab
+set shortmess+=I
+set clipboard=unnamed
 color monokai
+
+let g:auto_save = 1
 
 "Add Leader-Mappings"
 imap <leader>[ []<ESC>i
@@ -33,11 +37,14 @@ map <leader>vv <ESC>:vnew<CR>
 map <leader>hh <ESC>:new<CR>
 map <leader>ss <ESC>ysiw
 map <leader>tt <ESC>:Tab /
+map <leader>s <ESC>ysiw
 
 no <down> ddp
 no <up> ddkP
 map <F9> <ESC>:Tlist<CR>
 map <F10> <ESC>:NERDTreeToggle<CR>
+
+let g:ycm_server_python_interpreter = "/usr/bin/python3"
 
 "Add auto-centering of lines
 nmap n nzz

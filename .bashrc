@@ -24,8 +24,8 @@ function _prompt_command() {
 }
 export PROMPT_COMMAND=_prompt_command
 
-if [ -f ~/.bashrc_aliases ]; then
-    . ~/.bashrc_aliases
+if [ -f ~/.bashrc_alias ]; then
+    . ~/.bashrc_alias
 fi
 
 if [ -f ~/.bashrc_aliases_functions ]; then

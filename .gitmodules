@@ -10,10 +10,6 @@
 	path=.vim/bundle/YouCompleteMe
 	url=git://github.com/Valloric/YouCompleteMe.git
 
-[submodule "vim-fugitive"]
-	path=.vim/bundle/vim-fugitive
-	url=git://github.com/tpope/vim-fugitive.git
-
 [submodule "vim-surround"]
     path=.vim/bundle/vim-surround
     url=git://github.com/tpope/vim-surround.git
@@ -26,3 +22,10 @@
     path=.vim/bundle/tabular
     url=git://github.com/godlygeek/tabular.git
 
+[submodule "syntastic"]
+    path=.vim/bundle/syntastic
+    url=git://github.com/scrooloose/syntastic.git
+
+[submodule "vim-auto-save"]
+    path=.vim/bundle/vim-auto-save
+    url=git://github.com/vim-scripts/vim-auto-save.git
