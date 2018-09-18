@@ -1,13 +1,20 @@
-let mapleader="<"
-execute pathogen#infect()                      
+execute plug#begin()
+Plug 'vim-syntastic/syntastic'
+Plug 'ryanoasis/vim-devicons'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'Valloric/YouCompleteMe'
+Plug 'scrooloose/nerdtree'
+Plug 'tpope/vim-surround'
+Plug 'godlygeek/tabular'
+Plug 'junegunn/fzf.vim'
+execute plug#end()
 
-"Add pathogen
 syntax on
 filetype plugin indent on
 
-" set term=screen-256color
 set completeopt-=preview
-set encoding=utf-8
+set encoding=UTF-8
 set nu
 set ic
 set title
@@ -22,10 +29,40 @@ set shiftwidth=4
 set expandtab
 set shortmess+=I
 set clipboard=unnamed
+
+"vim-airline
+set laststatus=2
+set t_Co=256
+let g:airline_theme = 'wombat'
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+
+" nerdtree
+let NERDTreeShowHidden = 1
+let g:NERDTreeDirArrowExpandable='▶'
+let g:NERDTreeDirArrowCollapsible='▼'
+autocmd FileType nerdtree setlocal nolist
+
+" syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+" vim-devicons
+let g:airline_powerline_fonts = 1
+let g:WebDevIconsNerdTreeAfterGlyphPadding = '  '
+
+" YouCompleteMe
+let g:ycm_server_python_interpreter = "/usr/bin/python3"
+
 color monokai
 
-let g:auto_save = 1
-
+let mapleader="<"
 "Add Leader-Mappings"
 imap <leader>[ []<ESC>i
 imap <leader>' ''<ESC>i
@@ -33,22 +70,15 @@ imap <leader>" ""<ESC>i
 imap <leader>( ()<ESC>i
 imap <leader>{ <CR>{<CR>}<ESC>O
 imap <leader>c <ESC>:%d<CR><CR><LF>
+map <leader>f <ESC>:Files<CR>
 map <leader>vv <ESC>:vnew<CR>
 map <leader>hh <ESC>:new<CR>
 map <leader>ss <ESC>ysiw
 map <leader>tt <ESC>:Tab /
 map <leader>s <ESC>ysiw
 
-no <down> ddp
-no <up> ddkP
 map <F9> <ESC>:Tlist<CR>
 map <F10> <ESC>:NERDTreeToggle<CR>
-
-let g:ycm_server_python_interpreter = "/usr/bin/python3"
-
-"Add auto-centering of lines
-nmap n nzz
-nmap N Nzz
 
 "Add Tab-Mappings"
 nmap <C-l> :tabnext<CR>
@@ -62,25 +92,6 @@ imap <C-h> <ESC>:tabprevious<CR>
 vmap <C-l> :tabnext<CR>
 vmap <C-t> :tabnew<CR>
 vmap <C-h> :tabprevious<CR>
-
-
-"Add airline- and NERDTree-configs
-set laststatus=2
-set t_Co=256
-let g:airline_theme = 'wombat'
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#enabled = 1
-let NERDTreeShowHidden = 1
-
-"Add syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
 
 " Compiler-Mappings
 autocmd FileType cpp map <F3> :Ccpp<CR>
@@ -97,7 +108,6 @@ command Csh w | !clear && chmod +x % && ./%
 command Cjs w | !clear && node %
 command Cjava w | !clear && javac % && java %:r
 
-"
 " Latex-Mappings
 let g:tex_flavor="latex"
 
@@ -118,7 +128,6 @@ autocmd FileType tex imap <leader>wh \While{condition}<CR>\EndWhile<ESC>O<TAB>
 autocmd FileType tex imap <leader>for \For{condition}<CR>\EndFor<ESC>O<TAB>
 
 "python mapping
-
 autocmd FileType python imap <leader>cl class A:<CR>def __init__(self):<CR>pass<CR><ESC>
 autocmd FileType python imap <leader>cfu def clsfunc(self):<CR>pass<CR><ESC>
 autocmd FileType python imap <leader>fu def func():<CR>pass<CR><ESC>

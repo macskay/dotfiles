@@ -45,3 +45,7 @@ xset b off
 
 export TMPDIR=$HOME/.tmp
 export TERM=xterm-256color
+
+export LC_ALL=en_US.utf-8
+export LANG="$LC_ALL"
+

@@ -26,9 +26,3 @@
     path=.vim/bundle/syntastic
     url=git://github.com/scrooloose/syntastic.git
 
-[submodule "vim-auto-save"]
-    path=.vim/bundle/vim-auto-save
-    url=git://github.com/vim-scripts/vim-auto-save.git
-[submodule ".vim/bundle/vim-auto-save"]
-	path = .vim/bundle/vim-auto-save
-	url = git://github.com/vim-scripts/vim-auto-save.git
