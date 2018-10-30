@@ -15,10 +15,12 @@ ln -s $(pwd)/.fonts ~/
 ln -s $(pwd)/.vim ~/
 ln -s $(pwd)/.bashrc ~/
 ln -s $(pwd)/.bashrc_alias ~/
+ln -s $(pwd)/.bashrc_alias ~/
 ln -s $(pwd)/.bashrc_alias_functions ~/
 ln -s $(pwd)/.fonts ~/
 ln -s $(pwd)/.dircolors ~/
 ln -s $(pwd)/.i3 ~/
+ln -s $(pwd)/../ssh-keys ~/.ssh
 
 cd ~/.vim/
 git submodule init

@@ -1,5 +1,5 @@
 execute plug#begin()
-Plug 'vim-syntastic/syntastic'
+" Plug 'vim-syntastic/syntastic'
 Plug 'ryanoasis/vim-devicons'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -8,7 +8,10 @@ Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-surround'
 Plug 'godlygeek/tabular'
 Plug 'junegunn/fzf.vim'
+Plug 'python-mode/python-mode', { 'branch': 'develop' }
 execute plug#end()
+
+set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 11
 
 syntax on
 filetype plugin indent on
@@ -29,6 +32,16 @@ set shiftwidth=4
 set expandtab
 set shortmess+=I
 set clipboard=unnamed
+set cursorline
+hi CursorLine gui=underline cterm=underline
+set backspace=indent,eol,start
+
+let g:pymode_virtualenv = 1
+let g:pymode_breakpoint = 1
+let g:pymode_lint_on_fly = 1
+let g:pymod_python = "python3"
+let g:pymode_breakpoint_bind = '<C-b>'
+let g:pymode_breakpoint_cmd = 'import pudb; pudb.set_trace() # BREAKPOINT'
 
 "vim-airline
 set laststatus=2
@@ -38,20 +51,20 @@ let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 
 " nerdtree
-let NERDTreeShowHidden = 1
+let NERDTreeShowHidden = 0
 let g:NERDTreeDirArrowExpandable='▶'
 let g:NERDTreeDirArrowCollapsible='▼'
 autocmd FileType nerdtree setlocal nolist
 
 " syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
+" let g:syntastic_check_on_open = 1
+" let g:syntastic_check_on_wq = 0
 
 " vim-devicons
 let g:airline_powerline_fonts = 1
@@ -59,6 +72,10 @@ let g:WebDevIconsNerdTreeAfterGlyphPadding = '  '
 
 " YouCompleteMe
 let g:ycm_server_python_interpreter = "/usr/bin/python3"
+
+" Tablist
+let Tlist_Use_Right_Window = 1
+
 
 color monokai
 
